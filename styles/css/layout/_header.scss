@@ -1,0 +1,32 @@
+.header{
+    
+    box-shadow: $shadow-primary;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.header-container{
+    display: flex;
+    align-items: center;
+    padding: 1em 1em;
+    
+}
+
+
+.avatar{
+    margin-right:auto;
+}
+
+
+/************.header-nav    ***********************/
+.header-nav{ 
+  display: flex;
+
+  .header-nav-li{
+    margin-left:1em;
+  }
+
+  .header-nav-li a{
+    text-transform: capitalize;
+  }
+}
