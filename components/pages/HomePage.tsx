@@ -1,6 +1,6 @@
 import { IndexLayout } from "../layouts/IndexLayout"
 import { Header } from "../Header";
-
+import { Profile } from "../Profile";
 
 export const HomePage = ()=>{
 
@@ -8,7 +8,7 @@ export const HomePage = ()=>{
    
     <IndexLayout>
         <Header/>
-        <div></div>
+        <Profile/>
         <div></div>
     </IndexLayout>
  )

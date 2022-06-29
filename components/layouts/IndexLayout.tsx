@@ -17,7 +17,7 @@ const Container = styled.div`
 `
 
 const Top = styled.div`
-
+  margin-bottom:1.5em;
 `
 const FirstSection = styled.div`
 

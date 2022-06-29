@@ -1,0 +1,29 @@
+.btn{
+    padding:.5em 1em;
+    border-radius:6px;
+    
+   
+}
+
+.btn__primary{
+    background-color: $clr-accent;
+    color:#fff;
+}
+
+.btn__icon{
+    display: flex;
+
+}
+
+.btn-icon{
+    margin-right:.8em;
+
+    svg{
+
+    }
+
+    path{
+        stroke:#fff;
+        stroke-width:1px;
+    }
+}
