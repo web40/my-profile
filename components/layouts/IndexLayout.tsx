@@ -20,7 +20,7 @@ const Top = styled.div`
   margin-bottom:1.5em;
 `
 const FirstSection = styled.div`
-
+  margin-bottom:3em;
 `
 
 const SecondSection = styled.div`
