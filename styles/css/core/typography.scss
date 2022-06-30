@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=El+Messiri&family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=M+PLUS+Rounded+1c:wght@700&display=swap');
 
 
 body{
@@ -7,5 +7,19 @@ body{
 
 
 h1,h2,h3,h4,h5,h6{
-    font-family:$font-secondary;
+    font-family:$font-head;
 }
+
+h1{
+    font-size:2em;
+
+    @include md{
+        font-size:2.5em;
+    }
+
+    @include lg{
+        font-size:3em;
+    }
+}
+
+

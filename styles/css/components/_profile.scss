@@ -1,5 +1,5 @@
 .profile-name{
-    font-size:3em;
+    // font-size:3em;
 
 }
 
@@ -7,10 +7,17 @@
 .profile-title{
     margin-bottom:1em;
     color:$clr-faint;
-    font-weight: bold;
 }
 
 .profile-excerpt{
-    font-size:1.5rem;
-    margin-bottom:1.4em;
+    font-size:1.2em;
+    margin-bottom:1.3em;
+
+    @include md{
+        font-size:1.4em;
+    }
+
+    @include lg{
+        font-size:1.4em;
+    }
 }
