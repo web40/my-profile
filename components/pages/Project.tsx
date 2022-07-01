@@ -14,21 +14,24 @@ export const Project = ()=>{
 
                 <div className="proj-imgoverlay">
                     <div className="proj-img">
-                        <Image src="/images/portfolio1.png" width="231px" height="125px"/>
+                        <Image src="/images/youtube.webp" width="231px" height="125px"/>
+
+
+                        <div className="proj-overlay">
+                            <div className="proj-overlay-stack">
+                                <span className="proj-stack">nextjs </span>
+                                <span className="proj-stack">mocha</span>
+                                <span className="proj-stack">namecheap</span>
+                                <span className="proj-stack">jeskin</span>
+                                <span className="proj-stack">wordpress</span>
+                            </div>
+                            <div className="proj-overlay-icon">
+                                <ClickSvgImg/>
+                            </div>
+                    </div>
                     </div>
 
-                    <div className="proj-overlay">
-                        <div className="proj-overlay-stack">
-                            <span className="proj-stack">nextjs </span>
-                            <span className="proj-stack">mocha</span>
-                            <span className="proj-stack">namecheap</span>
-                            <span className="proj-stack">jeskin</span>
-                            <span className="proj-stack">wordpress</span>
-                        </div>
-                        <div className="proj-overlay-icon">
-                            <ClickSvgImg/>
-                        </div>
-                    </div>
+                   
 
                 </div>
                 <div className="proj-desc">
