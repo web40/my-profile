@@ -5,6 +5,7 @@ import { Project} from "../pages/Project";
 const ProjectContainer = styled.div`
  display:grid;
  grid-template-columns:repeat(1,auto);
+ row-gap:35px;
  @media(min-width:500px){
     grid-template-columns:repeat(2,230px);
     grid-gap:25px;

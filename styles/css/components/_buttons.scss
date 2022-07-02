@@ -1,4 +1,5 @@
 .btn{
+    display: inline-flex;
     padding:.5em 1em;
     border-radius:$rad-primary;
     
@@ -10,10 +11,7 @@
     color:#fff;
 }
 
-.btn__icon{
-    display: flex;
 
-}
 
 .btn-icon{
     margin-right:.8em;
