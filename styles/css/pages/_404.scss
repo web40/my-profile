@@ -1,0 +1,49 @@
+.container-404{
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+    padding:20% 15px 0 15px;
+
+    @include md{
+        padding:10% 15px 0 15px;
+    }
+
+    @include md{
+        padding:7% 15px 0 15px;
+    }
+}
+
+.head-notfound{
+    margin-bottom:30px;
+    text-align: center;
+}
+
+.img-404{
+    display:flex;
+    justify-content:center;
+    margin-bottom:40px;
+ svg{
+    width:130px;
+ }
+}
+
+.link-404{
+    font-family:$font-head;
+    color:$clr-secondary;
+    font-size:1.5em;
+    text-align: center;
+}
+
+
+/**************** not found svg**************/ 
+.page-not-found_svg__svg-404-topbar{
+ fill:$clr-faint;
+}
+
+.page-not-found_svg__svg-404-browserarea{
+ fill:$clr-faint;
+}
+
+.page-not-found_svg__svg-404-area{
+    fill:$clr-faint;
+}
