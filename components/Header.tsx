@@ -8,13 +8,13 @@ export const Header = ()=>{
         
         <div className="header">
             <div className='header-container'>
-                <div className="avatar">
-                    <AvatarImg/>
-                </div>
+                <Link href='/'>
+                   <a className="avatar" ><AvatarImg/></a>
+                </Link>
 
                 <ul className="header-nav">
                     <li className="header-nav-li"><Link href="/projects"><a>Projects</a></Link></li>
-                    <li className="header-nav-li"><Link href="/Github"><a>Github</a></Link></li>
+                    <li className="header-nav-li"><Link href="https://github.com/kenpl44"><a target="_blank">Github</a></Link></li>
                     <li className="header-nav-li"><Link href="/message"><a>Message</a></Link></li>
                 </ul>
 

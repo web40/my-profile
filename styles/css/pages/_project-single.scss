@@ -1,0 +1,54 @@
+.projectBreadcrumb{
+    margin-bottom:1em;
+    & span:nth-child(1){
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    & span:nth-child(2){
+        font-weight: 700;
+        font-size:.6
+    }
+    & span:nth-child(3){
+        font-family:$font-head;
+        text-transform: capitalize;
+        font-size:1.2em;
+    }
+}
+
+.project-single-description{
+    font-size:1.1em;
+    margin-bottom:1.5em;
+
+
+ 
+}
+
+.project-single-info{
+    margin-bottom:1.5em;
+    ul{
+
+    }
+
+    li{
+        margin-bottom:4px;
+
+        & span:first-child{
+            text-transform:uppercase;
+            background-color:$clr-accent;
+            padding:2px 4px;
+            font-size:.9em;
+            font-weight:bold;
+            margin-right:20px;
+        }
+        
+    }
+}
+
+
+.project-single-images{
+    img{
+        width:100% !important;
+        height:auto;
+    }
+}
