@@ -2,38 +2,41 @@
 
 import {v4 as uuid} from 'uuid';
 import Image from 'next/image';
-
+import Link from 'next/link';
 
 import ClickSvgImg from '../../public/icons/click.svg';
 import { arch } from 'os';
 export const Project = ({project,key})=>{
    
-    const {acf,_embedded} = project || {}
+    const {acf,_embedded,slug} = project || {}
 
     return(
 
         <>
           {project && 
-            <div className="proj" key={key}>
+          <Link href={`/projects/${slug}`}>
+            <a className="proj" key={key}>
               <div className="proj-container">
-
+              
                 <div className="proj-imgoverlay">
                     <div className="proj-img">
-                        <Image src="https://profile.kennethowusu.com/"+ _embedded['wp:feauredmedia'][0].link width="231px" height="125px"/>
+                        <Image src={_embedded['wp:featuredmedia'] ? _embedded['wp:featuredmedia'][0].source_url : '/images/shot1.png'} width="231px" height="125px"/>
 
-
+                        {/* proj-overlay */}
                         <div className="proj-overlay">
                             <div className="proj-overlay-stack">
-                                <span className="proj-stack">nextjs </span>
-                                <span className="proj-stack">mocha</span>
-                                <span className="proj-stack">namecheap</span>
-                                <span className="proj-stack">jeskin</span>
-                                <span className="proj-stack">wordpress</span>
+
+                                {acf.stack && acf.stack.map(stack=>{
+                                 return <span className="proj-stack">{stack}</span>
+      
+                                })}
+                         
                             </div>
                             <div className="proj-overlay-icon">
                                 <ClickSvgImg/>
                             </div>
-                    </div>
+                        </div>
+
                     </div>
 
                    
@@ -45,7 +48,8 @@ export const Project = ({project,key})=>{
                 </div>
 
               </div>
-            </div>
+            </a>
+            </Link>
           }
         </>
     )

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect,useState } from 'react';
 
-
+import api from './api';
 
 
 
@@ -11,11 +11,10 @@ export const ProjectLoader = ({children})=>{
     
 /***********useEffect*******/
 useEffect(()=>{
-
+    const url  = `${api.url}/wp/v2/projects?_embed`;
+    const token = api.token;
     const fetchProjects = async()=>{
-        const url = 'https://profile.kennethowusu.com/wp-json/wp/v2/projects?_embed';
-        const token = 
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvcHJvZmlsZS5rZW5uZXRob3d1c3UuY29tIiwiaWF0IjoxNjU3MDQyMzY4LCJuYmYiOjE2NTcwNDIzNjgsImV4cCI6MTY1NzY0NzE2OCwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMSJ9fX0.pLkEX-m4iE2mxpzIpl10rCOdt01G_vrNBQ9RTTt8sCY"
+      
         const headers = {
             Authorization:`Bearer ${token}`
         }
@@ -29,9 +28,16 @@ useEffect(()=>{
             
         }catch(e){console.log(e)}
 
+
+        const mresponse = await axios.get(`${api.url}/wp/v2/settings/`,config)
+
+        console.log(mresponse.data)
+
     }
     
     fetchProjects();
+
+    
 },[]);
 
 
