@@ -30,7 +30,7 @@ export const IndexLayout = ({
     children,
 })=>{
     
-    const [top,firstSec,secondSec] = children;
+    const [top,firstSec,secondSec,thirdSec] = children;
 
 
 
@@ -41,6 +41,8 @@ export const IndexLayout = ({
             <FirstSection>{firstSec}</FirstSection>
 
             <SecondSection>{secondSec}</SecondSection>
+
+            <div>{thirdSec}</div>
         </Container>
     )
 }

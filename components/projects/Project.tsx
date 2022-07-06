@@ -1,20 +1,25 @@
+
+
+import {v4 as uuid} from 'uuid';
 import Image from 'next/image';
 
 
 import ClickSvgImg from '../../public/icons/click.svg';
-export const Project = ()=>{
-
+import { arch } from 'os';
+export const Project = ({project,key})=>{
+   
+    const {acf,_embedded} = project || {}
 
     return(
 
         <>
-            
-            <div className="proj">
+          {project && 
+            <div className="proj" key={key}>
               <div className="proj-container">
 
                 <div className="proj-imgoverlay">
                     <div className="proj-img">
-                        <Image src="/images/youtube.webp" width="231px" height="125px"/>
+                        <Image src="https://profile.kennethowusu.com/"+ _embedded['wp:feauredmedia'][0].link width="231px" height="125px"/>
 
 
                         <div className="proj-overlay">
@@ -35,12 +40,13 @@ export const Project = ()=>{
 
                 </div>
                 <div className="proj-desc">
-                    <div className="proj-desc-title">rottpass</div>
-                    <div className="proj-desc-excerpt">A password manager web application</div>
+                    <div className="proj-desc-title">{acf.project_name}</div>
+                    <div className="proj-desc-excerpt">{acf.project_small_details}</div>
                 </div>
 
               </div>
             </div>
+          }
         </>
     )
 }
