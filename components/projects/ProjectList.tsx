@@ -3,6 +3,7 @@ import {v4 as uuid} from 'uuid';
 import styled from 'styled-components';
 import { ProjectLoader } from '../containers/ProjectsContainer';
 import { Project} from "./Project";
+import { ProjectSkeleton } from '../skeleton/ProjectSkeleton';
 
 const ProjectContainer = styled.div`
  display:grid;
@@ -19,14 +20,15 @@ const ProjectContainer = styled.div`
 
 export const ProjectList  = ({projects})=>{
 
-    console.log(projects)
     return(
         <>
            
            <ProjectContainer>
+
+           {!projects && <ProjectSkeleton count={4} key={uuid()}/>}
            {projects && projects.map(project=>{ 
              
-               return (<div>
+               return (<div key={uuid()}>
                         <Project project={project} key={uuid()}/>
                       </div>)
              

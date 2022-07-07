@@ -1,9 +1,45 @@
 import DownloadSvgImg from '../public/icons/download.svg';
 import axios from 'axios';
 import Link from 'next/link';
-export const Profile = ()=>{
-    const fileLink = 'https://woopos.3megabyte.com/wp-content/uploads/2022/07/EDVP.pdf';
+import Skeleton from 'react-loading-skeleton';
+import { ResumeLinkContainer } from './containers/ResumeLinkContainer';
+
+
+
+const ResumeLink = ({resumeUrl})=>{
     const fileName = 'CV_CoverLetter_Kenneth.pdf';
+   
+    
+  return(
+
+
+    <>
+ 
+        
+    {!resumeUrl ?  <Skeleton height={40} width={197}/>:
+
+
+    (<Link href={resumeUrl.profile_resume_link}>            
+                 <a  className="btn btn__primary" download={fileName} rel="nofollow">
+                       
+                            <span className="btn-icon">
+                            <DownloadSvgImg/>
+                        </span>
+                        <span>Download Resume</span> 
+                    </a>
+                  
+     </Link>)}
+
+     </>
+  );
+      
+  
+}
+
+
+
+
+export const Profile = ()=>{
 
     return(
         <div className="profile">
@@ -17,16 +53,10 @@ export const Profile = ()=>{
                         becoming a better developer and growing a career in tech.
                 </p>
             </div>
-            <Link href={fileLink} download={fileName}>
-        
-                <a  className="btn btn__primary" download={fileName}>
-                    
-                        <span className="btn-icon">
-                        <DownloadSvgImg/>
-                    </span>
-                    <span>Download Resume</span> 
-                </a>
-            </Link>
+
+            <ResumeLinkContainer>
+                <ResumeLink/>
+            </ResumeLinkContainer>
 
 
             </div>

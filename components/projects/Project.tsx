@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 import ClickSvgImg from '../../public/icons/click.svg';
 import { arch } from 'os';
-export const Project = ({project,key})=>{
+export const Project = ({project})=>{
    
     const {acf,_embedded,slug} = project || {}
 
@@ -15,7 +15,7 @@ export const Project = ({project,key})=>{
         <>
           {project && 
           <Link href={`/projects/${slug}`}>
-            <a className="proj" key={key}>
+            <a className="proj" >
               <div className="proj-container">
               
                 <div className="proj-imgoverlay">
