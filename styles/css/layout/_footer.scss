@@ -1,0 +1,13 @@
+.footer{
+ margin-top:auto;
+}
+
+.footer-container{
+    padding-bottom:30px;
+    padding-top:20px;
+
+    .footer-content{
+        font-size:.8rem;
+        color:$clr-faint;
+    }
+}

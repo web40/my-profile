@@ -23,11 +23,30 @@
 .header-nav{ 
   display: flex;
 
+
+
+
+
   .header-nav-li{
     margin-left:1em;
   }
 
+
+
+
+
   .header-nav-li a{
     text-transform: capitalize;
+
+    &.active{
+      background-color: $clr-accent;
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: $rad-primary;
+    }
   }
+
+
+
+
 }

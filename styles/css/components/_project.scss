@@ -1,6 +1,6 @@
 .proj-container{
     
-   
+    text-align: center;
     width:100%;
     @include md{
         width:213px;
@@ -95,7 +95,7 @@
 .proj-desc{
 
     .proj-desc-title{
-        font-size:16px;
+        font-size:1.1em;
         color:$clr-secondary;
         text-transform: capitalize;
         margin:5px 0 5px 0;

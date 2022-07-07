@@ -1,13 +1,17 @@
 
 import styled from 'styled-components';
 import { Header } from '../Header';
+import { Footer } from '../Footer';
 //layouts 
 //-head
 //-profile excerpt 
 //-projects
 
 const Container = styled.div`
- padding:1.5em 1em;
+min-height:100vh;
+padding:1.5em 1em 0 1em;
+display:flex;
+flex-direction:column;
 
  @media(min-width:900px){
     width:850px;
@@ -32,6 +36,7 @@ export const ProjectSingleLayout = ({
         <Container>
            <Header/> 
            {children}
+           <Footer/>
         </Container>
     )
 }

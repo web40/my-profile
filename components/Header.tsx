@@ -1,8 +1,14 @@
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 
+
 import AvatarImg from '../public/images/avatar.svg';
+
 export const Header = ()=>{
+    
+    const router = useRouter();
+    const {pathname} = router;
 
     return(
         
@@ -13,7 +19,7 @@ export const Header = ()=>{
                 </Link>
 
                 <ul className="header-nav">
-                    <li className="header-nav-li"><Link href="/projects"><a>Projects</a></Link></li>
+                    <li className="header-nav-li"><Link href="/projects"><a className={pathname == "/projects" && "active"}>Projects</a></Link></li>
                     <li className="header-nav-li"><Link href="https://github.com/kenpl44"><a target="_blank">Github</a></Link></li>
                     <li className="header-nav-li"><Link href="/message"><a>Message</a></Link></li>
                 </ul>

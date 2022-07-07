@@ -1,5 +1,6 @@
 
 import styled from 'styled-components';
+import { Footer } from '../Footer';
 
 //layouts 
 //-head
@@ -7,7 +8,12 @@ import styled from 'styled-components';
 //-projects
 
 const Container = styled.div`
- padding:1.5em 1em;
+ min-height:100vh;
+ padding:1.5em 1em 0 1em;
+ display:flex;
+ flex-direction:column;
+
+
 
  @media(min-width:900px){
     width:850px;
@@ -42,6 +48,7 @@ export const IndexLayout = ({
             <SecondSection>{secondSec}</SecondSection>
 
             <div>{thirdSec}</div>
+            <Footer/>
         </Container>
     )
 }

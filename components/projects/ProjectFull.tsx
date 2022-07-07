@@ -7,7 +7,8 @@ import { ProjectSingleContainer } from '../containers/ProjectSingleContainer';
 import { detectContentType } from 'next/dist/server/image-optimizer';
 import { ProjectSinglePageSkeleton } from '../skeleton/ProjectSinglePageSkeleton';
 
-
+import RightCaretSvg from '../../public/icons/right-caret.svg';
+import LinkNewTabSvg from '../../public/icons/link_new_tab.svg';
 export const ProjectFull = ({project})=>{
 
 
@@ -22,7 +23,7 @@ return(
    
      <div className='projectBreadcrumb'>
           <span className='mr-2'><Link href='/'><a>Projects</a></Link></span>
-          <span className='mr-2'>&#62;</span>
+          <span className='mr-2'><RightCaretSvg/></span>
           <span>{acf && acf.project_name}</span>
        
       </div>
@@ -34,17 +35,22 @@ return(
 
       <div className="project-single-info">
         <ul className="">
-          {website && <li><span>Website</span><span>{website}</span></li>}
+          {website && <li><span className="c-head">Website</span><span className='c-content'>
+            <Link href={website}>
+              <a className="website-link" target="_blank"><span className='mr-1'>{website}</span><span><LinkNewTabSvg/></span></a> 
+              
+            </Link></span>
+            </li>}
 
 
 
-          {platform && <li><span>Platform</span> 
-                        {platform.map(platformItem=> <span key={uuid()}>{platformItem}, </span>)}
+          {platform && <li><span className="c-head">Platform</span> 
+                        {platform.map(platformItem=> <span  className='c-content' key={uuid()}>{platformItem}, </span>)}
                       
                       </li>}
           
           
-          {stack && <li><span>stack</span> {stack.map(stackItem=> <span key={uuid()}>{stackItem}</span>)}</li>}
+          {stack && <li><span className="c-head">stack</span> {stack.map(stackItem=> <span className='c-content' key={uuid()}>{stackItem}, </span>)}</li>}
           
 
 
@@ -55,7 +61,7 @@ return(
           {gallery && gallery.map(imageItem=>{
 
 
-           return(<div key={uuid()}  className='mb-4'><Image src={imageItem} width={1920}height={1280}/></div>)  
+           return(<div key={uuid()}  className='mb-4'><Image src={imageItem} width={850}height={478}/></div>)  
 
           } )}
       </div>
