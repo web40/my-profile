@@ -27,7 +27,7 @@ export const Project = ({project})=>{
                             <div className="proj-overlay-stack">
 
                                 {acf.stack && acf.stack.map(stack=>{
-                                 return <span className="proj-stack">{stack}</span>
+                                 return <span key={uuid()} className="proj-stack">{stack}</span>
       
                                 })}
                          

@@ -24,17 +24,14 @@ export const ProjectSingleLayout = ({
     children,
 })=>{
     
-    const [elementOne,elementTwo,elementThree,elementFour] = children;
+    
 
 
 
     return(
         <Container>
            <Header/> 
-           <ProjectBreadcrumb>{elementOne}</ProjectBreadcrumb>
-           <div>{elementTwo}</div>
-           <div>{elementThree}</div>
-           <div>{elementFour}</div>
+           {children}
         </Container>
     )
 }

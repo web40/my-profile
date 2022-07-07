@@ -28,7 +28,6 @@ useEffect(()=>{
         try{
             const response = await axios.get(url,config);
             setResumeUrl(response.data)
-            console.log(resumeUrl,'yeah')
         }catch(e){console.log(e)}
 
 

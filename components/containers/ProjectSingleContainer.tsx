@@ -5,16 +5,20 @@ import api from './api';
 
 
 
-export const ProjectLoader = ({children})=>{
+export const ProjectSingleContainer = ({children,slug})=>{
 
-    const [projects,setProjects] = useState('');
+    const [project,setProject] = useState('');
     
 /***********useEffect*******/
 useEffect(()=>{
     const url  = `${api.url}/wp/v2/projects?_embed`;
     const token = api.token;
     const fetchProjects = async()=>{
-      
+        
+        const params = {
+            slug:slug,
+            acf_format:'standard',
+        }
         const headers = {
             Authorization:`Bearer ${token}`
         }
@@ -23,8 +27,15 @@ useEffect(()=>{
         }
         
         try{
-            const response = await axios.get(url,config);
-            setProjects(response.data)
+            const response = await axios({
+                url:url,
+                method:'get',
+                headers:headers,
+                params:params
+
+            })
+            setProject(response.data[0])
+       
             
         }catch(e){console.log(e)}
     }
@@ -41,7 +52,7 @@ return(
     <>
      {React.Children.map(children,child=>{
         if(React.isValidElement(child)){
-            return React.cloneElement(child,{projects});
+            return React.cloneElement(child,{project});
         }
 
         return child;

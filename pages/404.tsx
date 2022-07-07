@@ -1,5 +1,5 @@
 
-import Link from 'next/Link';
+import Link from 'next/link';
 
 
 import NotFoundSvg from '../public/icons/page-not-found.svg';

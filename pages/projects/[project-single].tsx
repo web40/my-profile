@@ -1,10 +1,27 @@
 import { ProjectSinglePage } from "../../components/pages/ProjectSinglePage";
 
-const ProjectSingle =()=>{
+
+export const getServerSideProps = async({params})=>{
+    return{
+        props:{params}
+    }
+}
+
+
+
+
+
+
+
+
+
+const ProjectSingle = ({params})=>{
+    const slug = params['project-single'];
+
 
     return(
         <>
-        <ProjectSinglePage/>
+        <ProjectSinglePage slug={slug}/>
         
         </>
     )
