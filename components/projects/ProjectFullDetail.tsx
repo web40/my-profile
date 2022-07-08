@@ -3,13 +3,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {v4 as uuid} from 'uuid';
 
-import { ProjectSingleContainer } from '../containers/ProjectSingleContainer';
-import { detectContentType } from 'next/dist/server/image-optimizer';
+
+
+/*============components===================*/
 import { ProjectSinglePageSkeleton } from '../skeleton/ProjectSinglePageSkeleton';
 
 import RightCaretSvg from '../../public/icons/right-caret.svg';
 import LinkNewTabSvg from '../../public/icons/link_new_tab.svg';
-export const ProjectFull = ({project})=>{
+
+
+
+
+export const ProjectFullDetail = ({project})=>{
 
 
 const {acf,content} = project || {};

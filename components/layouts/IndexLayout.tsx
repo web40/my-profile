@@ -1,6 +1,6 @@
 
 import styled from 'styled-components';
-import { Footer } from '../Footer';
+import { Footer } from '../common/Footer';
 
 //layouts 
 //-head

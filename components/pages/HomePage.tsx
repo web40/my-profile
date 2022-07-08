@@ -1,12 +1,10 @@
 import { IndexLayout } from "../layouts/IndexLayout"
-import { Header } from "../Header";
+import { Header } from "../common/Header";
 import { Profile } from "../Profile"
-import { Project } from "../projects/Project";
-import { HomeProjectSection } from "../sections/home/HomeProjectSection";
-import { ProjectList } from "../projects/ProjectList";
+import { HomeProjectSection } from "../partials/home/HomeProjectSection";
 
 
-import { ProjectLoader } from "../containers/ProjectsContainer";
+
 
 
 export const HomePage = ()=>{

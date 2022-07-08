@@ -1,13 +1,23 @@
 import axios from 'axios';
 import React, { useEffect,useState } from 'react';
+import {useRouter} from 'next/router';
+
+
+
+
 
 import api from './api';
 
 
 
-export const ProjectSingleContainer = ({children,slug})=>{
+export const ProjectContainer = ({children})=>{
 
     const [project,setProject] = useState('');
+    
+    /**********get project slug for api***/
+    const router = useRouter();
+    const slug = router.query['project-single'];
+
     
 /***********useEffect*******/
 useEffect(()=>{

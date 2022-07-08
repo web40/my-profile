@@ -3,16 +3,16 @@ import Link from 'next/Link';
 import Image from 'next/image';
 
 
-import { ProjectSingleContainer } from '../containers/ProjectSingleContainer';
-import { ProjectFull } from '../projects/ProjectFull';
+import { ProjectContainer } from '../containers/ProjectContainer';
+import { ProjectFullDetail } from '../projects/ProjectFullDetail';
 
 
-export const ProjectSinglePage = ({slug})=>{
+export const ProjectSinglePage = ()=>{
 
   
 return(
-  <ProjectSingleContainer slug={slug}>
-     <ProjectFull/>
-  </ProjectSingleContainer>
+  <ProjectContainer>
+     <ProjectFullDetail/>
+  </ProjectContainer>
 )
 }

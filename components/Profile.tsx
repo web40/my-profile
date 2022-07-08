@@ -2,20 +2,34 @@ import DownloadSvgImg from '../public/icons/download.svg';
 import axios from 'axios';
 import Link from 'next/link';
 import Skeleton from 'react-loading-skeleton';
+
+
+//===========components=====================//
 import { ResumeLinkContainer } from './containers/ResumeLinkContainer';
+import { OptionContainer } from './containers/OptionContainer';
 
 
+/********Proifle Excerpt******/
+const ProfileExcerpt =({option})=>{
+    return(
+        <>
+        <p className="profile-excerpt">
+            {!option ?
+             <><Skeleton/><Skeleton/></>
+             :
+             option.profile_resume_link
+            }
+         </p>
+        </>
+    )
+}
 
+
+/*********ResumeLink******************/
 const ResumeLink = ({resumeUrl})=>{
     const fileName = 'CV_CoverLetter_Kenneth.pdf';
-   
-    
   return(
-
-
     <>
- 
-        
     {!resumeUrl ?  <Skeleton height={40} width={197}/>:
 
 
@@ -33,12 +47,11 @@ const ResumeLink = ({resumeUrl})=>{
      </>
   );
       
-  
 }
 
 
 
-
+/**********Profile*********************/
 export const Profile = ()=>{
 
     return(
@@ -48,10 +61,9 @@ export const Profile = ()=>{
              <div className="profile-description">
                 <h1 className="profile-name">Hi, Kenneth here!</h1>
                 <h2 className="profile-title">Full Stack Web Developer</h2>
-                <p className="profile-excerpt">
-                    Welcome to my digital garden where I share what I'm learning about shipping great products, 
-                        becoming a better developer and growing a career in tech.
-                </p>
+                <OptionContainer path="profile_summary">
+                    <ProfileExcerpt/>
+                </OptionContainer>
             </div>
 
             <ResumeLinkContainer>
