@@ -1,9 +1,11 @@
+
+import { ProjectsPage } from "../../components/pages/ProjectsPage";
+
+
 const  Projects = ()=>{
  
  return(
-    <div>
-        <h3>This will be projects page</h3>
-    </div>
+    <><ProjectsPage/></>
  )
 }
 

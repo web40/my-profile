@@ -1,13 +1,13 @@
-import DownloadSvgImg from '../public/icons/download.svg';
+
 import axios from 'axios';
 import Link from 'next/link';
 import Skeleton from 'react-loading-skeleton';
 
 
 //===========components=====================//
-import { ResumeLinkContainer } from './containers/ResumeLinkContainer';
-import { OptionContainer } from './containers/OptionContainer';
-
+import { ResumeLinkContainer } from '../../containers/ResumeLinkContainer';
+import { OptionContainer } from '../../containers/OptionContainer';
+import DownloadSvgImg from '../../../public/icons/download.svg';
 
 /********Proifle Excerpt******/
 const ProfileExcerpt =({option})=>{
@@ -59,7 +59,7 @@ export const Profile = ()=>{
             <div className="profile-container">
 
              <div className="profile-description">
-                <h1 className="profile-name">Hi, Kenneth here!</h1>
+                <h1 className="profile-name">Hi, I'm Kenneth!</h1>
                 <h2 className="profile-title">Full Stack Web Developer</h2>
                 <OptionContainer path="profile_summary">
                     <ProfileExcerpt/>

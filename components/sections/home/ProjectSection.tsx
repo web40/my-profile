@@ -1,11 +1,15 @@
 
+
+import Link from 'next/link';
 import styled from 'styled-components';
+
+
+
+
+
+/*================components=====================*/
 import { ProjectsContainer } from '../../containers/ProjectsContainer';
-import { Project} from "../../projects/Project";
-
 import { ProjectList } from '../../projects/ProjectList';
-
-
 import RightCaretSvg from '../../../public/icons/right-caret.svg';
 
 const ProjectContainer = styled.div`
@@ -36,7 +40,7 @@ const RightCaretContainer = styled.span`
     }
  }
 `
-export const HomeProjectSection  = ()=>{
+export const ProjectSection  = ()=>{
 
 
     return(
@@ -50,11 +54,12 @@ export const HomeProjectSection  = ()=>{
             </div>
     
 
-           <div>
-            <button className='btn btn__primary flex items-center'>
+           <Link href="/projects">
+            <a className='btn btn__primary flex items-center'>
                 <span>More Projects</span>
                 <RightCaretContainer><RightCaretSvg/></RightCaretContainer>
-            </button></div>
+            </a>
+            </Link>
           
         </>
     )

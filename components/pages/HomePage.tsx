@@ -1,7 +1,7 @@
 import { IndexLayout } from "../layouts/IndexLayout"
 import { Header } from "../common/Header";
-import { Profile } from "../Profile"
-import { HomeProjectSection } from "../partials/home/HomeProjectSection";
+import { Profile } from "../sections/home/Profile"
+import { ProjectSection } from "../sections/home/ProjectSection";
 
 
 
@@ -16,7 +16,7 @@ export const HomePage = ()=>{
 
         <Profile/>
 
-        <HomeProjectSection/>
+        <ProjectSection/>
 
 
     </IndexLayout>
