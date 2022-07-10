@@ -3,8 +3,10 @@ const nodemailer = require('nodemailer');
 
 const {email_user,email_pass,email_host,email_to} = process.env ;
 
-export default function(req,res){
+export default function emailSendApi(req,res){
     const {from_name,from_email,from_message} = req.body;
+    
+
 
     /********allow only post requests */
     if(req.method !== 'POST'){
@@ -39,12 +41,17 @@ export default function(req,res){
 
         
             const info = await transporter.sendMail({
-                from:`"Admin Emailer"<${email_user}>`,
+                from:`"Message from Profile"<${email_user}>`,
                 to:`${email_to}`,
-                subject:"Message from profile",
+                subject:"New Message Profile",
                 text:``,
                 html:`
-                   Message from ${from_name}(${from_email})<br/>
+                  
+                   <p><b>Name:</b></p>
+                   <p>${from_name}</p>
+                   <p><b>Email:</b></p>
+                   <p>${from_email})</p>
+                   <p><b>Message:</b></p>
                    <p>${from_message}</p>
                 `
             })

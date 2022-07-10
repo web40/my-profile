@@ -98,17 +98,21 @@ svg{
 `
 export const Modal = ({shouldShow,onRequestClose})=>{
     const[isSubmit,setIsSubmit] = useState(false)
+  
     const[fromName,setFromName] = useState('');
     const[fromEmail,setFromEmail] = useState('');
     const[fromMessage,setFromMessage] = useState('');
     
-
+    /*****validation**/
+    const[valError,setValError] = useState('')
+    const[isValid,setIsValid] = useState(false)
 
     /********SendMessage*****/
     const sendMessage = async(e)=>{
         e.preventDefault();
 
-        if(!fromName || !fromEmail || !fromMessage || !isEmail(fromEmail)){
+        if(!isValid){
+            setValError('Please check and correct form error');
             return;
         }
         
@@ -141,8 +145,11 @@ export const Modal = ({shouldShow,onRequestClose})=>{
         setFromName('');
         setFromEmail('');
         setFromMessage('');
+        setValError('');
+        setIsValid(false);
         setIsSubmit(false);
         onRequestClose();
+
         document.querySelector('#send-email-btn').disabled = false;
     }
 
@@ -152,7 +159,18 @@ export const Modal = ({shouldShow,onRequestClose})=>{
         return re.test(mail);
     }
 
+    
+    /******validation********/
 
+    useEffect(()=>{
+        setValError('');
+        if(fromName && fromEmail && fromMessage && isEmail(fromEmail)){
+            setIsValid(true);
+        }else{
+            setIsValid(false);
+        }
+        
+    },[fromName,fromEmail,fromMessage])
     useEffect(()=>{
         const submitBtn = document.querySelector('#send-email-btn');
         if(isSubmit){
@@ -176,27 +194,28 @@ export const Modal = ({shouldShow,onRequestClose})=>{
             </CloseButtonContainer>
   
 
-            <ModalContent >
+            <ModalContent>
                 <div>
-                    <h3 className='text-2xl mb-3'>I'm open for opportunities</h3>
+                    <h3 className='text-2xl mb-3'>{"I'm"} open for opportunities</h3>
                     <p className='mb-8'>Please take a second to message me. I will get back as soon as possible</p>
 
                     <div>
                         <form action="">
 
+                            <div className="mb-3" style={{color:"red",fontWeight:"bold"}}>{valError}</div>
                             <div className="form-group mb-5">
-                                <label htmlFor="">Name</label>
+                                <label htmlFor="" className='font-bold'>Name</label>
                                 <input type="text" required value={fromName} 
                                 onChange={(e)=>setFromName(e.target.value)}/>
                             </div>
 
                             <div className="form-group mb-5">
-                                <label htmlFor="">Email</label>
+                                <label htmlFor="" className='font-bold'>Email</label>
                                 <input type="email"  required value={fromEmail} onChange={(e)=>setFromEmail(e.target.value)}/>
                             </div>
 
                             <div className="form-group mb-4">
-                                <label htmlFor="">Message</label>
+                                <label htmlFor="" className='font-bold'>Message</label>
                                 <textarea name="" id="" cols="30" rows="5" required
                                 value={fromMessage} 
                                 onChange={(e)=>setFromMessage(e.target.value)}
