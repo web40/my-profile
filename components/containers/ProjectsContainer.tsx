@@ -17,21 +17,17 @@ export const ProjectsContainer = ({
     
 /***********useEffect*******/
 useEffect(()=>{
-    const url  = `${api.url}/wp/v2/projects`;
-    const token = api.token;
-
-
+    const url  = `${api.url}/wp/v2/projects?_embed`;
+    const headers = api.headers;
+    
     const fetchProjects = async()=>{
       
-        const headers = {
-            Authorization:`Bearer ${token}`
-        }
+      
         const config = {
             headers:headers
         }
         
         const params = {
-            _embed:'',
             categories,
             order,
             page,
@@ -46,7 +42,7 @@ useEffect(()=>{
             })
             setProjects(response.data)
             
-        }catch(e){console.log(e)}
+        }catch(e){}
     }
     
     fetchProjects();

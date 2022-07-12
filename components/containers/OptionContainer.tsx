@@ -13,8 +13,8 @@ export const OptionContainer = ({children,path})=>{
 useEffect(()=>{
 
    
-    const url  = `${api.url}/profile/v1/options/${path}`;
-    const token = api.token;
+    const url  = `${api.url}/profile/v1/options/${path}/`;
+    const headers = api.headers;
   
 
 
@@ -22,13 +22,6 @@ useEffect(()=>{
 
     const getResponse = async()=>{
       
-        const headers = {
-            Authorization:`Bearer ${token}`
-        }
-        const config = {
-            headers:headers
-        }
-        
         try{
             
             const response = await axios({

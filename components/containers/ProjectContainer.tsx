@@ -22,20 +22,14 @@ export const ProjectContainer = ({children})=>{
 /***********useEffect*******/
 useEffect(()=>{
     const url  = `${api.url}/wp/v2/projects?_embed`;
-    const token = api.token;
+    const headers = api.headers;
     const fetchProjects = async()=>{
         
         const params = {
             slug:slug,
             acf_format:'standard',
         }
-        const headers = {
-            Authorization:`Bearer ${token}`
-        }
-        const config = {
-            headers:headers
-        }
-        
+ 
         try{
             const response = await axios({
                 url:url,
