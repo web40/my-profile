@@ -1,11 +1,16 @@
 
 import { ProjectsPage } from "../../components/pages/ProjectsPage";
-
+import Head from 'next/head';
 
 const  Projects = ()=>{
  
  return(
-    <><ProjectsPage/></>
+    <>
+    <Head>
+      <title>Projects - Kenneth Owusu</title>
+    </Head>
+    <ProjectsPage/>
+    </>
  )
 }
 

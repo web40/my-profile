@@ -3,7 +3,8 @@ $breakpoints:(
 "sm":480px,
 "md":720px,
 "lg":960px,
-"xl":1200px
+"xl":1200px,
+"projectBreakpoint":"500px"
 );
 
 
@@ -45,3 +46,12 @@ $breakpoints:(
         @content;
     }
 }
+
+
+/**************others****************/
+@mixin projectBreakpoint{
+    @media(min-width:map-get($breakpoints,"projectBreakpoint")){
+        @content;
+    }
+}
+

@@ -7,20 +7,7 @@ import { Footer } from '../common/Footer';
 //-profile excerpt 
 //-projects
 
-const Container = styled.div`
- min-height:100vh;
- padding:1.5em 1em 0 1em;
- display:flex;
- flex-direction:column;
 
-
-
- @media(min-width:900px){
-    width:850px;
-    margin:auto;
- }
-  
-`
 
 const Top = styled.div`
 `
@@ -40,7 +27,7 @@ export const IndexLayout = ({
 
 
     return(
-        <Container>
+        <div className='index-layout-container'>
             <Top>{top}</Top>
 
             <FirstSection>{firstSec}</FirstSection>
@@ -49,6 +36,6 @@ export const IndexLayout = ({
 
             <div>{thirdSec}</div>
             <Footer/>
-        </Container>
+        </div>
     )
 }

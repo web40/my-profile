@@ -33,10 +33,10 @@ export const ProjectSingleLayout = ({
 
 
     return(
-        <Container>
+        <div className='index-layout-container'>
            <Header/> 
            {children}
            <Footer/>
-        </Container>
+        </div>
     )
 }

@@ -9,7 +9,12 @@ import { HomePage } from '../components/pages/HomePage'
 
 const Home: NextPage = () => {
   return (
+   <>
+    <Head>
+      <title>Kenneth Owusu - Homepage</title>
+    </Head>
     <HomePage/>
+   </>
   )
 }
 

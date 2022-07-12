@@ -196,8 +196,10 @@ export const Modal = ({shouldShow,onRequestClose})=>{
 
             <ModalContent>
                 <div>
-                    <h3 className='text-2xl mb-3'>{"I'm"} open for opportunities</h3>
-                    <p className='mb-8'>Please take a second to message me. I will get back as soon as possible</p>
+                    <h3 className='text-2xl mb-3'>{"I'm"} open to opportunities</h3>
+                    <p className='mb-8'>I'm excited to work on a team or work with a potential client to take business to the next level with tech.
+                    Kindly take a second to message me. I will respond as soon as possible.
+                    </p>
 
                     <div>
                         <form action="">

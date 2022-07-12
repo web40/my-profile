@@ -27,7 +27,7 @@ return(
      {!project && <ProjectSinglePageSkeleton/>}
    
      <div className='projectBreadcrumb'>
-          <span className='mr-2'><Link href='/'><a>Projects</a></Link></span>
+          <span className='mr-2'><Link href='/projects'><a>Projects</a></Link></span>
           <span className='mr-2'><RightCaretSvg/></span>
           <span>{acf && acf.project_name}</span>
        
