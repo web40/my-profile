@@ -48,7 +48,7 @@ export const ProjectSection  = ()=>{
             <h2 className="section-head">Projects</h2>
             
             <div className='mb-6'>
-                <ProjectsContainer categories="19" order='asc'>
+                <ProjectsContainer categories={19} order="asc">
                     <ProjectList/>   
                 </ProjectsContainer>
             </div>

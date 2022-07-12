@@ -11,7 +11,7 @@ export const ResumeLinkContainer = ({children})=>{
     
 /***********useEffect*******/
 useEffect(()=>{
-    const url  = `${api.url}/profile/v1/options/profile_resume_url`;
+    const url  = `${api.url}/profile/v1/options/profile_resume_url/`;
     const token = api.token;
 
 
