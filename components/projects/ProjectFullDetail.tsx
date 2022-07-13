@@ -55,7 +55,7 @@ return(
                       </li>}
           
           
-          {stack && <li><span className="c-head">stack</span> {stack.map(stackItem=> <span className='c-content' key={uuid()}>{stackItem}, </span>)}</li>}
+          {stack && <li className='ov-flow'><span className="c-head">stack</span> <div>{stack.map(stackItem=> <span className='c-content' key={uuid()}>{stackItem},</span>)}</div></li>}
           
 
 
