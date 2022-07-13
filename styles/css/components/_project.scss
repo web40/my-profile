@@ -1,14 +1,23 @@
+$project-border-radius:8px;
+
 .proj-container{
     
     text-align: center;
     width:100%;
+    margin-bottom:10
+    
+    
+    px;
     @include md{
         width:213px;
     }
 }
 
-
+/********
+project-img
+**********/
 .proj-img{
+   
     width:100% ;
     height: auto;
     cursor: pointer;
@@ -23,6 +32,7 @@
     }
 
     & img{
+        border-radius: $project-border-radius;
         display: inline-block;
         width:100% !important;
         height: 100% !important; 
@@ -41,20 +51,24 @@
 /*************proj-overlay**********************/
 .proj-overlay{
     opacity: 0;
-    // background-color:$clr-sandybeach;
+    display: none;
     position:absolute;
     padding:.5em;
+    border-radius:$project-border-radius;
     top:0;
     left:0;
     right:0;
     bottom:0;
-    display:flex;
     width:100%;
     height:inherit;
     flex-direction: column;
     justify-content: center;
     transition:background-color .3s ease-out,opacity .3s ease-out;
     cursor: pointer;
+
+    @include projectBreakpoint{
+        display: flex;
+    }
 
     //**** on hover ***/ 
     &:hover {
@@ -109,7 +123,9 @@
 }
 
 
-/************proj-desc********************/
+/************
+***   proj-descripiton
+********************/
 .proj-desc{
 
     .proj-desc-title{
@@ -117,10 +133,17 @@
         color:$clr-secondary;
         text-transform: capitalize;
         margin:5px 0 5px 0;
+
+
     }
 
     .proj-desc-excerpt{
+      padding:0 15px;
       color:#2f2d2d;
-      font-size:14px;
+      font-size:1em;
+
+      @include projectBreakpoint{
+        padding: 0 0;
+      }
     }
 }
